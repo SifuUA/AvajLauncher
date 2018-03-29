@@ -10,7 +10,7 @@ import java.util.List;
 import static java.lang.Integer.parseInt;
 
 public class Main {
-
+    public static WeatherTower weatherTower;
     private static List<Flyable> flyables = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -21,12 +21,13 @@ public class Main {
                 int countSimulation = parseInt(line);
                 System.out.println(countSimulation);
                 while ((line = reader.readLine()) != null) {
-                    System.out.println(line.split(" ", 2));
                     Flyable flyable = AircraftFactory.newAircraft(line.split(" ")[0], line.split(" ")[1],
                             Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]),
                             Integer.parseInt(line.split(" ")[4]));
                     flyables.add(flyable);
-                    System.out.println(line);
+                }
+                for (Flyable flyable : flyables) {
+                    flyable.registerTower(weatherTower);
                 }
             }
         } catch (FileNotFoundException e) {
