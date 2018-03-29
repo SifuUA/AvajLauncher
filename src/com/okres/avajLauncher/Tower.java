@@ -1,7 +1,9 @@
 package com.okres.avajLauncher;
 
+import java.util.List;
+
 public class Tower {
-    private Flyable observers [];
+    private List <Flyable> observers;
 
     public void register(Flyable flyable) {
 
