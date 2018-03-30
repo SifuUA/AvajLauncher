@@ -4,7 +4,7 @@ public class WeatherProvider {
 
     private WeatherProvider weatherProvider;
 
-    private String weather [];
+    private String weather [] = {"RAIN", "FOG", "SUN", "SNOW"};
 
     private WeatherProvider(WeatherProvider weatherProvider) {
         this.weatherProvider = weatherProvider;
