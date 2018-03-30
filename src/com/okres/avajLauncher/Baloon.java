@@ -1,6 +1,6 @@
 package com.okres.avajLauncher;
 
-public class Baloon extends Aircraft implements Flyable{
+public class Baloon extends Aircraft implements Flyable {
 
     private WeatherTower weatherTower;
 
@@ -16,8 +16,7 @@ public class Baloon extends Aircraft implements Flyable{
     @Override
     public void registerTower(WeatherTower weatherTower) {
         weatherTower.register(this);
-        System.out.println("");
-        this.weatherTower.register(this);
-
+        this.weatherTower = weatherTower;
+        System.out.println("Tower says: " + this.getClass().getSimpleName() + "#" + " registered to weather tower.");
     }
 }
