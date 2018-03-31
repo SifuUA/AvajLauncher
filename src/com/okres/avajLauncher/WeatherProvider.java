@@ -1,20 +1,22 @@
 package com.okres.avajLauncher;
 
-public class WeatherProvider {
+public final class WeatherProvider {
 
-    private WeatherProvider weatherProvider;
+    private static WeatherProvider weatherProvider;
 
-    private String weather [] = {"RAIN", "FOG", "SUN", "SNOW"};
+    private String weather[] = {"RAIN", "FOG", "SUN", "SNOW"};
 
-    private WeatherProvider(WeatherProvider weatherProvider) {
-        this.weatherProvider = weatherProvider;
+    private WeatherProvider() {
     }
 
     public WeatherProvider getProvider() {
+        if (weatherProvider == null)
+            weatherProvider = new WeatherProvider();
         return weatherProvider;
     }
 
     public String getCurrentWeather(Coordinates coordinates) {
+
         return null;
     }
 }

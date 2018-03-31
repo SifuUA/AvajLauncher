@@ -7,6 +7,6 @@ public class AircraftFactory {
         } else if (type.equals("JetPlane")) {
             return new JetPlane(name, new Coordinates(longitude, latitude, height));
         } else
-            return new Helicopter("Helicopter", new Coordinates(longitude, latitude, height));
+            return new Helicopter(name, new Coordinates(longitude, latitude, height));
     }
 }
