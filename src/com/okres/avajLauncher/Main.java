@@ -30,6 +30,9 @@ public class Main {
                 for (Flyable flyable : flyables) {
                     flyable.registerTower(weatherTower);
                 }
+                for (int i = 0; i < countSimulation; i++) {
+                    weatherTower.changeWeather();
+                }
             }
         } catch (FileNotFoundException e) {
             System.out.println("Cant find file " + args[0]);
