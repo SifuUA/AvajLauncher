@@ -7,14 +7,14 @@ public final class WeatherProvider {
     private WeatherProvider() {
     }
 
-    public WeatherProvider getProvider() {
+    public static WeatherProvider getProvider() {
         if (weatherProvider == null)
             weatherProvider = new WeatherProvider();
         return weatherProvider;
     }
 
     public String getCurrentWeather(Coordinates coordinates) {
-        int sum = coordinates.getLatitude() + coordinates.getLongitude() + coordinates.getHeight() % 4;
+        int sum = (coordinates.getLatitude() + coordinates.getLongitude() + coordinates.getHeight()) % 4;
         return weather[sum];
     }
 }

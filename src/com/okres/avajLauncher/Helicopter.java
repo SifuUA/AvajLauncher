@@ -10,7 +10,17 @@ public class Helicopter extends Aircraft implements Flyable {
 
     @Override
     public void updateConditions() {
-
+        String weather = weatherTower.getWeather(coordinates);
+        if (weather.equals("SUN")) {
+            coordinates.setLongitude(coordinates.getLongitude() + 10);
+            coordinates.setHeight(coordinates.getHeight() + 2);
+        } else if (weather.equals("RAIN")) {
+            coordinates.setLongitude(coordinates.getLongitude() + 5);
+        } else if (weather.equals("FOG")) {
+            coordinates.setLongitude(coordinates.getLongitude() + 1);
+        } else if (weather.equals("SNOW")) {
+            coordinates.setHeight(coordinates.getHeight() - 12);
+        }
     }
 
     @Override
