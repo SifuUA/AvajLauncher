@@ -14,12 +14,20 @@ public class Helicopter extends Aircraft implements Flyable {
         if (weather.equals("SUN")) {
             coordinates.setLongitude(coordinates.getLongitude() + 10);
             coordinates.setHeight(coordinates.getHeight() + 2);
+            System.out.println("Helicopter" + "#" + this.name + "(" + this.id + "): " +
+                    "This is hot!");
         } else if (weather.equals("RAIN")) {
             coordinates.setLongitude(coordinates.getLongitude() + 5);
+            System.out.println("Helicopter" + "#" + this.name + "(" + this.id + "): " +
+                    "It is raining. Better watch out of lighting.");
         } else if (weather.equals("FOG")) {
             coordinates.setLongitude(coordinates.getLongitude() + 1);
+            System.out.println("Helicopter" + "#" + this.name + "(" + this.id + "): " +
+                    "Do not see anything! We will crush!");
         } else if (weather.equals("SNOW")) {
             coordinates.setHeight(coordinates.getHeight() - 12);
+            System.out.println("Helicopter" + "#" + this.name + "(" + this.id + "): " +
+                    "My rotor is going to freeze!");
         }
     }
 

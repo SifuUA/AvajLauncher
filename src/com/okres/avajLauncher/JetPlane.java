@@ -14,12 +14,20 @@ public class JetPlane extends Aircraft implements Flyable {
         if (weather.equals("SUN")) {
             coordinates.setLatitude(coordinates.getLatitude() + 10);
             coordinates.setHeight(coordinates.getHeight() + 2);
+            System.out.println("JetPlane" + "#" + this.name + "(" + this.id + "): " +
+                    "Lets enjoy such cool weather!");
         } else if (weather.equals("RAIN")) {
             coordinates.setLatitude(coordinates.getLatitude() + 5);
+            System.out.println("JetPlane" + "#" + this.name + "(" + this.id + "): " +
+                    "Its raining cats and dogs!");
         } else if (weather.equals("FOG")) {
             coordinates.setLatitude(coordinates.getLatitude() + 1);
+            System.out.println("JetPlane" + "#" + this.name + "(" + this.id + "): " +
+                    "Should reduce speed, poor visibility.");
         } else if (weather.equals("SNOW")) {
             coordinates.setHeight(coordinates.getHeight() - 7);
+            System.out.println("JetPlane" + "#" + this.name + "(" + this.id + "): " +
+                    "Danger, the temperature go down. Turbojets are is at risk.");
         }
     }
 
