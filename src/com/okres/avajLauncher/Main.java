@@ -33,6 +33,7 @@ public class Main {
                 for (int i = 0; i < countSimulation; i++) {
                     weatherTower.changeWeather();
                 }
+                Logger.getLogger().loggerShowLog();
             }
         } catch (FileNotFoundException e) {
             System.out.println("Cant find file " + args[0]);
