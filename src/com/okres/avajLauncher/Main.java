@@ -34,6 +34,7 @@ public class Main {
                     weatherTower.changeWeather();
                 }
                 Logger.getLogger().loggerShowLog();
+                Logger.getLogger().writeInFile();
             }
         } catch (FileNotFoundException e) {
             System.out.println("Cant find file " + args[0]);
