@@ -13,7 +13,7 @@ public class Main {
     public static WeatherTower weatherTower;
     private static List<Flyable> flyables = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MyException {
         try {
             weatherTower = new WeatherTower();
             BufferedReader reader = new BufferedReader(new FileReader(args[0]));
@@ -37,9 +37,14 @@ public class Main {
                 Logger.getLogger().writeInFile();
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Cant find file " + args[0]);
+            System.err.println("Cant find file " + args[0]);
         } catch (IOException e) {
-            System.out.println("First line must be number - count of simulation");
+            System.err.println("First line must be number - count of simulation");
+        } catch (MyException e) {
+            System.err.println(e.getMessage());
+        } catch (NumberFormatException e) {
+            //System.err.println("First line must be number - count of simulation");
+            throw new MyException("First line must be number - count of simulation",e);
         }
 
     }
