@@ -36,15 +36,15 @@ public class Main {
                 Logger.getLogger().loggerShowLog();
                 Logger.getLogger().writeInFile();
             }
+            else throw new MyException("Cant find in first line count of simulations");
         } catch (FileNotFoundException e) {
             System.err.println("Cant find file " + args[0]);
         } catch (IOException e) {
-            System.err.println("First line must be number - count of simulation");
+            System.err.println("Cant find in first line count of simulations");
         } catch (MyException e) {
             System.err.println(e.getMessage());
         } catch (NumberFormatException e) {
-            //System.err.println("First line must be number - count of simulation");
-            throw new MyException("First line must be number - count of simulation",e);
+            System.err.println("First line must be a number - count of simulation");
         }
 
     }
