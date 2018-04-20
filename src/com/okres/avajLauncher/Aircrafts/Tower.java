@@ -1,4 +1,6 @@
-package com.okres.avajLauncher;
+package com.okres.avajLauncher.Aircrafts;
+
+import com.okres.avajLauncher.Aircrafts.Flyable;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,6 @@
-package com.okres.avajLauncher;
+package com.okres.avajLauncher.Aircrafts;
+
+import com.okres.avajLauncher.Logging.Logger;
 
 public class Helicopter extends Aircraft implements Flyable {
 
@@ -47,7 +49,8 @@ public class Helicopter extends Aircraft implements Flyable {
     public void registerTower(WeatherTower weatherTower) {
         weatherTower.register(this);
         this.weatherTower = weatherTower;
-        System.out.println("Tower says: " + this.getClass().getSimpleName() +
+        Logger.getLogger().loggerAddLog("Tower says: " +
+                this.getClass().getSimpleName() +
                 "#" + this.name + "(" + this.id + ")" +
                 " registered to weather tower.");
     }

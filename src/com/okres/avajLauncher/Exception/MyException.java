@@ -1,4 +1,4 @@
-package com.okres.avajLauncher;
+package com.okres.avajLauncher.Exception;
 
 public class MyException extends Exception {
 

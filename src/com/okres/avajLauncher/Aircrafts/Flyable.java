@@ -1,6 +1,7 @@
-package com.okres.avajLauncher;
+package com.okres.avajLauncher.Aircrafts;
 
 public interface Flyable {
+
     public void updateConditions();
 
     public void registerTower(WeatherTower weatherTower);

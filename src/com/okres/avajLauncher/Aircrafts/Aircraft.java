@@ -1,6 +1,7 @@
-package com.okres.avajLauncher;
+package com.okres.avajLauncher.Aircrafts;
 
 public class Aircraft {
+
     protected long id;
     protected String name;
     protected Coordinates coordinates;

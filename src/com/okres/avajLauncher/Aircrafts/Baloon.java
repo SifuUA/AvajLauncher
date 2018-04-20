@@ -1,4 +1,6 @@
-package com.okres.avajLauncher;
+package com.okres.avajLauncher.Aircrafts;
+
+import com.okres.avajLauncher.Logging.Logger;
 
 public class Baloon extends Aircraft implements Flyable {
 
@@ -45,7 +47,9 @@ public class Baloon extends Aircraft implements Flyable {
     public void registerTower(WeatherTower weatherTower) {
         weatherTower.register(this);
         this.weatherTower = weatherTower;
-        Logger.getLogger().loggerAddLog("Tower says: " + this.getClass().getSimpleName() +
-                "#" + this.name + "(" + this.id + ")" + " registered to weather tower.");
+        Logger.getLogger().loggerAddLog("Tower says: " +
+                this.getClass().getSimpleName() +
+                "#" + this.name + "(" + this.id + ")" +
+                " registered to weather tower.");
     }
 }

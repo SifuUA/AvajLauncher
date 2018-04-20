@@ -1,4 +1,6 @@
-package com.okres.avajLauncher;
+package com.okres.avajLauncher.Aircrafts;
+
+import com.okres.avajLauncher.Logging.Logger;
 
 public class JetPlane extends Aircraft implements Flyable {
 

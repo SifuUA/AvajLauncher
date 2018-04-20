@@ -1,4 +1,4 @@
-package com.okres.avajLauncher;
+package com.okres.avajLauncher.Logging;
 
 import java.io.BufferedWriter;
 import java.io.File;
