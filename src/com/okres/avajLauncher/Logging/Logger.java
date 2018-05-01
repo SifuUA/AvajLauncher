@@ -9,7 +9,7 @@ public class Logger {
 
     private static Logger logger;
     private static String str = "";
-    private static final String FILENAME = "/home/okres/IdeaProjects/AvajLauncher/src/LogFile.txt";
+    private static final String FILENAME = "simulation.txt";
 
     private Logger() {
     }

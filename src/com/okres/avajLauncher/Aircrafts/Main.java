@@ -1,8 +1,5 @@
 package com.okres.avajLauncher.Aircrafts;
 
-import com.okres.avajLauncher.Aircrafts.AircraftFactory;
-import com.okres.avajLauncher.Aircrafts.Flyable;
-import com.okres.avajLauncher.Aircrafts.WeatherTower;
 import com.okres.avajLauncher.Exception.MyException;
 import com.okres.avajLauncher.Logging.Logger;
 
@@ -21,7 +18,8 @@ public class Main {
     private static List<Flyable> flyables = new ArrayList<>();
 
     public static void main(String[] args) throws MyException {
-
+        if (args.length == 0)
+            throw new MyException("Error, cant find file in arguments");
         try {
             weatherTower = new WeatherTower();
             BufferedReader reader = new BufferedReader(new FileReader(args[0]));
@@ -53,7 +51,8 @@ public class Main {
                 for (int i = 0; i < countSimulation; i++) {
                     weatherTower.changeWeather();
                 }
-                Logger.getLogger().loggerShowLog();
+                if (args.length == 2 && args[0].equals("-p"))
+                    Logger.getLogger().loggerShowLog();
                 Logger.getLogger().writeInFile();
             } else
                 throw new MyException("Cant find in first line count of simulations");
