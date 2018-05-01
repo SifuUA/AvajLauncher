@@ -51,7 +51,7 @@ public class Main {
                 for (int i = 0; i < countSimulation; i++) {
                     weatherTower.changeWeather();
                 }
-                if (args.length == 2 && args[0].equals("-p"))
+                if (args.length == 2 && args[1].equals("-p"))
                     Logger.getLogger().loggerShowLog();
                 Logger.getLogger().writeInFile();
             } else
