@@ -29,14 +29,14 @@ public class Main {
                 try {
                     countSimulation = parseInt(line);
                 } catch (NumberFormatException e) {
-                    System.err.println("First line must be a number - count of "
+                    System.err.println("First line must be an integer number - count of "
                             + "simulation");
                     System.exit(0);
                 }
                 while ((line = reader.readLine()) != null && !line.equals("")) {
                     int height = Integer.parseInt(line.split(" ")[4]);
-                    if (height > 100 || height < 0)
-                        throw new MyException("The height must be in the range 0 - 100");
+/*                    if (height > 100 || height < 0)
+                        throw new MyException("The height must be in the range 0 - 100");*/
                     Flyable flyable = AircraftFactory.
                             newAircraft(line.split(" ")[0],
                                     line.split(" ")[1],
@@ -64,6 +64,10 @@ public class Main {
             System.err.println(e.getMessage());
         } catch (NumberFormatException e) {
             System.err.println("Coordinates must be positive integer number");
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            throw new MyException("Data in the file must be those format:\n" +
+                    " TYPE NAME LONGITUDE LATITUDE HEIGHT.");
         }
     }
 }
